@@ -18,13 +18,37 @@ html {
 
 body {
   font-family: "Kumbh Sans", sans-serif;
+  height: 100%;
+  width: 100%;
 }
 
 .container {
+  position: relative;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background: $dark-cyan;
   padding: 150px 0;
+  overflow: hidden;
+
+  &::before, &::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    width: 50%;
+    height: 100%;
+  }
+
+  &::before {
+    background: url(images/bg-pattern-top.svg) no-repeat center / 100% auto;
+    top: -50%;
+    left: 0;
+  }
+  &::after {
+    background: url(images/bg-pattern-bottom.svg) no-repeat center / 100% auto;
+    bottom: -50%;
+    right: 0;
+  
+  }
 }
 
 .card {
@@ -36,6 +60,7 @@ body {
   background: #ffffff;
   overflow: hidden;
   text-align: center;
+  z-index: 2;
 
   &_profile {
     position: relative;
