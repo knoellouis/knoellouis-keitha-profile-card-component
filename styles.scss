@@ -1,0 +1,110 @@
+$dark-cyan: hsl(185, 75%, 39%);
+$very-dark-desaturated-blue: hsl(229, 23%, 23%);
+$dark-grayish-blue: hsl(227, 10%, 46%);
+$dark-gray: hsl(0, 0%, 59%);
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  background: $dark-cyan;
+  padding: 150px 0;
+}
+
+.card {
+  position: relative;
+  max-width: 350px;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 15px;
+  background: #ffffff;
+  overflow: hidden;
+  text-align: center;
+
+  &_profile {
+    position: relative;
+    padding: 0 25px 25px;
+    margin-top: -25px;
+  }
+
+  &_banner_image {
+    max-height: 140px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &_profile_image {
+    position: relative;
+    transform: translatey(-50%);
+    border: 5px #ffffff solid;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+  }
+
+  &_profile_name {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  &_profile_age {
+    font-size: 16px;
+    font-weight: 400;
+    color: $dark-gray;
+    margin-left: 5px;
+  }
+
+  &_profile_location {
+    color: $dark-gray;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+  &_social_info {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 25px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: $dark-gray;
+      opacity: 0.3;
+    }
+
+    .social_info_title {
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .social_info_details {
+      font-size: 12px;
+      color: $dark-gray;
+      margin-top: 5px;
+    }
+  }
+}
